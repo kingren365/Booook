@@ -79,7 +79,7 @@ return [
     'max' => [
         'numeric' => 'The :attribute may not be greater than :max.',
         'file' => 'The :attribute may not be greater than :max kilobytes.',
-        'string' => 'The :attribute may not be greater than :max characters.',
+        'string' => ':attributeは:max文字以内で入力してください',
         'array' => 'The :attribute may not have more than :max items.',
     ],
     'mimes' => 'The :attribute must be a file of type: :values.',
@@ -153,6 +153,9 @@ return [
         'tel' => '電話番号',
         'adnumber' => '郵便番号',
         'adress' => '住所',
+        'explain' => '商品詳細',
+        'price' => '金額',
+        'image_path' => '商品画像',
     ],
 
 ];

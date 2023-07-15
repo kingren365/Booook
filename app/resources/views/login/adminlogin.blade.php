@@ -41,7 +41,7 @@
                 @csrf
                 <div>
                     <label for="email" class="text-primary">メールアドレス</label>
-                    <input type="email" name="email" style="width: 100%;">
+                    <input type="email" name="email" style="width: 100%;" value="{{ old('email') }}">
                 </div>
                 <div>
                     <label for="password" class="text-primary">パスワード</label>

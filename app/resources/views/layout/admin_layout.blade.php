@@ -22,8 +22,9 @@
 
         a {
             color: #000000;
+            text-decoration: none;
         }
-        
+
         header {
             height: 80px;
         }
@@ -51,7 +52,7 @@
 <body>
     <header class="d-flex justify-content-between bg-light">
         <div class="d-flex justify-content-center align-items-center col-4">
-            <h1><a href="{{ route('admin.home') }}">Booook!ADMIN</a></h1>   
+            <h1><a href="{{ route('admin.home') }}">Booook!ADMIN</a></h1>
         </div>
         <ul class="d-flex justify-content-around align-items-center col-4">
             @if (url()->full() == route('admin.account'))

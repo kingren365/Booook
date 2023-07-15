@@ -7,7 +7,6 @@
         display: block;
         width: 100%;
         margin: 40px auto;
-        text-decoration: none;
     }
     button {
         display: block;
