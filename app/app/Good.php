@@ -12,7 +12,7 @@ class Good extends Model
     {
         if ($price_max < $price_min) {
             $goods = $this->where('display_flg', '=', '0')->get()->toArray();
-        } elseif ($search_word == null) {
+        } elseif (empty($search_word)) {
             $goods = $this->where('display_flg', '=', '0')->whereBetween('amount', [$price_min, $price_max])->get()->toArray();
         } else {
             $goods = $this->where('display_flg', '=', '0')

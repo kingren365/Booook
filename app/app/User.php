@@ -82,7 +82,7 @@ class User extends Authenticatable
 
     public function passwordReset($email, $password)
     {
-        $user = $this->where('email', '=', $email)->update(['password' => Hash::make($password)]);
+        $this->where('email', '=', $email)->update(['password' => Hash::make($password)]);
         return;
     }
 
