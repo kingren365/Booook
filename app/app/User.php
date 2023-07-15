@@ -49,4 +49,41 @@ class User extends Authenticatable
         $this->save();
         return;
     }
+
+    public function acntInfo($user_id)
+    {
+        $user = $this->find($user_id)->toArray();
+        return $user;
+    }
+
+    public function updateUserInfo($user_id, $name, $email, $tel, $adnumber, $adress)
+    {
+        $user = $this->find($user_id);
+        $user->name = $name;
+        $user->email = $email;
+        $user->tel = $tel;
+        $user->adnumber = $adnumber;
+        $user->adress = $adress;
+        $user->save();
+        return;
+    }
+
+    public function userAcntDelete($user_id)
+    {
+        $user = $this->find($user_id);
+        $user->delete();
+        return;
+    }
+
+    public function allget()
+    {
+        return $this->get()->toArray();
+    }
+
+    public function passwordReset($email, $password)
+    {
+        $user = $this->where('email', '=', $email)->update(['password' => Hash::make($password)]);
+        return;
+    }
+
 }

@@ -3,6 +3,12 @@
 -ユーザーホーム-
 @endsection
 @section('section')
+@if (session()->has('purchaseComplete'))
+<p class="text-danger">{{ session('purchaseComplete') }}</p>
+@endif
+@if (session()->has('amountFailed'))
+    <p class="text-danger">{{ session('amountFailed') }}</p>
+@endif
 <div class="d-flex justify-content-center p-3 flex-wrap text-center">
     @foreach ($items as $item)
         <div class="p-3 col-3 my-3 mx-1" style="border: 1px solid #000000;">
@@ -13,6 +19,6 @@
 </div>
 
 <div class="my-3 text-center">
-    <a href="">特商法部に基づく表記</a>
+    <a href="{{ route('user.special.commercial.law') }}">特商法に基づく表記</a>
 </div>
 @endsection

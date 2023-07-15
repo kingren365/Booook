@@ -24,7 +24,7 @@
 <body>
     <div class="flexbox-container-vertical-center">
         <div>
-            <h1 class="text-center my-5">Booook!</h1>
+            <h1 class="text-center my-5"><a style="text-decoration: none;color: #000000;" href="{{ route('user.home') }}">Booook!</a></h1>
                 @if ($errors->any())
                     <div>
                         <ul>
@@ -34,8 +34,17 @@
                         </ul>
                     </div>
                 @endif
+                @if (session()->has('errEmail'))
+                    <p class="text-danger text-center">{{ session('errEmail') }}</p>
+                @endif
                 @if (session()->has('registerComp'))
                     <p class="text-danger">{{ session('registerComp') }}</p>
+                @endif
+                @if (session()->has('userAcntDelete'))
+                    <p class="text-danger">{{ session('userAcntDelete') }}</p>
+                @endif
+                @if (session()->has('completeMailMsg'))
+                    <p class="text-center text-danger">{{ session('completeMailMsg') }}</p>
                 @endif
             <form action="{{ route('user.login') }}" method="POST" style="width: 100%;">
                 @csrf
@@ -51,7 +60,7 @@
                     <button type="submit" class="btn btn-primary">ログイン</button>
                 </div>
                 <div>
-                    <a href="">パスワードをお忘れの方はこちら</a>
+                    <a href="{{ route('user.password.reset.before') }}">パスワードをお忘れの方はこちら</a>
                 </div>
                 <div>
                     <a href="{{ route('user.register') }}">新規登録はこちらから</a>
